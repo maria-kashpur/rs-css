@@ -1,0 +1,79 @@
+.levels {
+  border: 1px solid $color3;
+  flex: 1 0 230px;
+  margin: 5px;
+  margin-bottom: 10px;
+  color: $color4;
+  padding: 10px;
+  min-height: 100%;
+
+  .title {
+    background-color: #30c5ff;
+    color: $color5;
+  }
+}
+
+.levels__box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 10px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.level {
+  list-style: decimal;
+  color: $color2;
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 10px;
+
+  & * {
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: $color3;
+    cursor: pointer;
+  }
+
+  &.active {
+    color: $color3;
+    font-weight: bold;
+  }
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  margin-right: 14px;
+  width: 8px;
+  height: 13px;
+  opacity: 2;
+  border: solid 3px white;
+  border-width: 0 3px 3px 0;
+  opacity: 0.2;
+  top: -1px;
+  transform: rotate(40deg);
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.level.check .checkmark {
+  opacity: 0.9;
+  border: solid 3px #00fffb;
+  border-width: 0 3px 3px 0;
+}
+.level.check.help .checkmark {
+  opacity: 0.9;
+  border: solid 3px #fffb4f;
+  border-width: 0 3px 3px 0;
+}
+
+.lamp {
+  color: #ff5500;
+}
+
+.levels__box.unactive .level {
+  pointer-events: none;
+}
