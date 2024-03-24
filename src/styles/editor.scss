@@ -1,0 +1,98 @@
+.editor {
+  width: 48%;
+  background-color: $color7;
+  color: $color4;
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color6;
+  border: 1px solid $color3;
+  padding: 10px;
+}
+
+.editor-main {
+  display: flex;
+  .editor-main__col-1,
+  .editor-main__col-2 {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .editor-main__col-1 {
+    border: 1px solid $color3;
+    border-top: none;
+  }
+}
+
+.editor-main__col-2 {
+  width: 100%;
+  max-width: 100%;
+}
+
+.input_css {
+  background-color: inherit;
+  color: $color4;
+  font-size: 1em;
+  width: 100%;
+  max-width: 100%;
+
+  &:placeholder-shown {
+    color: rgb(181, 181, 181);
+    background-color: aqua;
+    padding-left: 3px;
+    animation: input 1s ease infinite;
+  }
+}
+
+@keyframes input {
+  50% {
+    background-color: transparent;
+  }
+}
+
+.additional_inf {
+  color: #b5b5b5;
+  font-size: 1em;
+  cursor: default;
+}
+
+.tegs__el {
+  color: #b5b5b5;
+  white-space: pre;
+  cursor: default;
+  &:hover,
+  &.light {
+    color: #ffffff;
+  }
+}
+
+@keyframes tremb {
+  0% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+.line.light::after {
+  content: attr(teg-behold);
+  background-color: rgba(0, 0, 0, 0.464);
+  border-radius: 10px;
+  // white-space: pre-wrap;
+  color: #fffcfc;
+  z-index: 13;
+  top: -35px;
+  position: absolute;
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 0.2em;
+  animation: normal;
+}

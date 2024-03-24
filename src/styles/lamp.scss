@@ -1,0 +1,85 @@
+.lamp {
+  position: relative;
+  top: -20px;
+  width: 82px;
+
+  svg {
+    position: absolute;
+    height: 80px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .lamp_light {
+    opacity: 0;
+  }
+
+  &.active .lamp_light {
+    opacity: 1;
+    transition: opacity ease 0.8s;
+  }
+
+  .lamp_selected {
+    opacity: 0;
+  }
+
+  &.light .lamp_selected {
+    opacity: 1;
+    transition: opacity ease 0.8s;
+  }
+}
+
+.svg-lamp-red {
+  .lamp_light ellipse {
+    fill: #fe7044;
+  }
+  .lamp-body_pomp {
+    fill: url(#paint_radial_red);
+  }
+}
+
+.svg-lamp-blue {
+  .lamp_light ellipse {
+    fill: #44fef3;
+  }
+  .lamp-body_pomp {
+    fill: url(#paint_radial_blue);
+  }
+}
+
+.svg-lamp-yellow {
+  .lamp_light ellipse {
+    fill: #ff9c40;
+  }
+  .lamp-body_pomp {
+    fill: url(#paint_radial_yellow);
+  }
+}
+
+.lamp.swaying {
+  animation: sway 1s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(-7deg);
+  }
+}
+
+.lamp.light::after {
+  content: attr(teg-behold);
+  background-color: rgba(0, 0, 0, 0.464);
+  border-radius: 10px;
+  // white-space: pre-wrap;
+  color: #fffcfc;
+  z-index: 13;
+  top: -35px;
+  position: absolute;
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 0.2em;
+  animation: normal;
+}

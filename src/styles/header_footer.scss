@@ -1,0 +1,32 @@
+header,
+footer {
+  background-color: $color2;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color5;
+}
+
+.header {
+  .title {
+    font-weight: 800;
+  }
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.github,
+.rsschool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
